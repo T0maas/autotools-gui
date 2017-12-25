@@ -18,9 +18,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
-    void on_lineEdit_cursorPositionChanged(int arg1, int arg2);
 
     void on_btAdd_clicked();
 
@@ -30,9 +27,14 @@ private slots:
 
     void on_btCreate_clicked();
 
+    void on_bt_pkSet_clicked();
+
+    void on_bt_Init_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::vector<Target> targets;
+    bool makepkg=false;
 };
 
 #endif // MAINWINDOW_H

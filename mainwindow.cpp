@@ -3,6 +3,8 @@
 #include <fstream>
 #include <iostream>
 #include "configs.h"
+#include <cstdlib>
+#include <sys/stat.h>
 
 using namespace  std;
 
@@ -18,15 +20,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-
-}
-
-void MainWindow::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-
-}
 
 void MainWindow::on_btAdd_clicked()
 {
@@ -55,8 +48,39 @@ void MainWindow::on_btSet_clicked()
 
 void MainWindow::on_btCreate_clicked()
 {
+    confsetup();
     std::ofstream configureac("configure.ac");
-    cout << configure_ac << endl;
     configureac.write(configure_ac.c_str(),configure_ac.size());
     configureac.close();
+    if (this->makepkg) {
+        std::string pkgfile_in = out_pkgs + ".in";
+        ofstream pkg(pkgfile_in);
+        pkg << "prefix=@prefix@\n";
+        pkg << "exec_prefix=@exec_prefix@\n";
+        pkg << "libdir=@libdir@\n";
+        pkg << "includedir=@includedir@\n" << endl;
+        pkg << "Name: " << (ui->tb_pkname->text().toUtf8().constData()) << endl;
+        pkg << "Description: " << ui->tb_pkdesc->text().toUtf8().constData()<<endl;
+        pkg << "Version: @VERSION@\n";
+        pkg << "Libs: " << ui->tb_pkldflags->text().toUtf8().constData() << endl;
+        pkg << "Cflags: " << ui->tb_pkcflags->text().toUtf8().constData() << endl;;
+        pkg.close();
+    }
+    struct stat info;
+    if( stat( "src", &info ) != 0 ) {
+    system("mkdir src");}
+
+}
+
+void MainWindow::on_bt_pkSet_clicked()
+{
+    out_pkgs = (ui->tb_pkname->text().toUtf8().constData());
+    out_pkgs += ".pc";
+    this->makepkg = true;
+}
+
+void MainWindow::on_bt_Init_clicked()
+{
+    cname = ui->tb_cname->text().toUtf8().constData();
+    cversion = ui->tb_cver->text().toUtf8().constData();
 }

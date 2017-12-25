@@ -49,8 +49,42 @@
        <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Configuration</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout_2">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="tb_cname"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLineEdit" name="tb_cver"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Version</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="bt_Init">
+          <property name="text">
+           <string>Init</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_control">
        <attribute name="title">
         <string>Targets</string>
@@ -248,6 +282,60 @@
          <widget class="QLabel" name="label_2">
           <property name="text">
            <string>pkg-config pkgs</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_pkg">
+       <attribute name="title">
+        <string>Package</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="tb_pkname"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLineEdit" name="tb_pkdesc"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLineEdit" name="tb_pkcflags"/>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLineEdit" name="tb_pkldflags"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>CFLAGS</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>LDFLAGS</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QPushButton" name="bt_pkSet">
+          <property name="text">
+           <string>Set</string>
           </property>
          </widget>
         </item>
