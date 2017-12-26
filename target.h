@@ -2,10 +2,8 @@
 #define TARGET_H
 #include <string>
 
-class Target
+struct Target
 {
-public:
-    Target();
     std::string type;
     std::string name;
     std::string src;

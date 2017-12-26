@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>548</width>
-    <height>449</height>
+    <height>461</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,10 +19,16 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="1">
      <widget class="QPushButton" name="btCreate">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="maximumSize">
        <size>
         <width>100</width>
@@ -36,6 +42,9 @@
     </item>
     <item row="0" column="1">
      <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -85,7 +94,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_control">
+      <widget class="QWidget" name="tab_tgs">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ff0000</string>
+       </property>
        <attribute name="title">
         <string>Targets</string>
        </attribute>
@@ -174,12 +189,12 @@
         </property>
         <item>
          <property name="text">
-          <string>library</string>
+          <string>binary</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>binary</string>
+          <string>library</string>
          </property>
         </item>
        </widget>
@@ -217,15 +232,18 @@
           <height>16777215</height>
          </size>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255,255,255);</string>
-        </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_targets">
+      <widget class="QWidget" name="tab_deps">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ff0000</string>
+       </property>
        <attribute name="title">
         <string>Depencies</string>
        </attribute>
@@ -241,18 +259,10 @@
          </widget>
         </item>
         <item row="3" column="0">
-         <widget class="QLineEdit" name="tb_sources">
-          <property name="styleSheet">
-           <string notr="true">background-color:#ffffff</string>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="tb_sources"/>
         </item>
         <item row="5" column="0">
-         <widget class="QLineEdit" name="tb_link">
-          <property name="styleSheet">
-           <string notr="true">background-color:#ffffff</string>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="tb_link"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_8">
@@ -287,7 +297,83 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_head">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:red</string>
+       </property>
+       <attribute name="title">
+        <string>Headers</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout_4">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Path</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="tb_hpath"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLineEdit" name="tb_hname"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="bt_AddHeader">
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QComboBox" name="cb_Headers"/>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>Remove</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QPushButton" name="bt_DelHeader">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_pkg">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ff0000</string>
+       </property>
        <attribute name="title">
         <string>Package</string>
        </attribute>

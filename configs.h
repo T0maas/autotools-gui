@@ -2,6 +2,7 @@
 #define CONFIGS_H
 #include <string>
 std::string out_pkgs;
+std::string pkgcheck;
 std::string cname,cversion;
 std::string configure_ac;
 void confsetup() {
@@ -17,6 +18,7 @@ AM_INIT_AUTOMAKE\n\
 AC_PROG_CXX\n\
 LT_INIT\n\
 # Checks for libraries.\n\
+"+ pkgcheck + "\
 \n\
 # Checks for header files.\n\
 AC_CHECK_HEADERS([stdlib.h])\n\
