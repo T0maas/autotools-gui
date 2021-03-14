@@ -12,7 +12,7 @@ TARGET = autotools-gui
 TEMPLATE = app
 
 prefix=/usr/local
-target.files += autotools-gui
+target.files += $$OUT_PWD/$$TARGET
 target.path += $$prefix/bin
 
 SOURCES += main.cpp\
