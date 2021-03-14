@@ -11,6 +11,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = autotools-gui
 TEMPLATE = app
 
+prefix=/usr/local
+target.files += autotools-gui
+target.path += $$prefix/bin
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -23,3 +26,5 @@ HEADERS  += mainwindow.h \
     headers.h
 
 FORMS    += mainwindow.ui
+
+INSTALLS += target
